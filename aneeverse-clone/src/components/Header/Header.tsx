@@ -34,7 +34,7 @@ const Header = () => {
         <nav className="relative flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center z-10">
-            <span className={`text-xl md:text-2xl font-bold ${scrolled ? 'text-[#063642]' : 'text-white'}`}>
+            <span className={`text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wide w-[200px] h-[40px] flex items-center ${scrolled ? 'text-[#063642]' : 'text-white'}`}>
               aneeverse
             </span>
           </Link>
@@ -133,7 +133,7 @@ const Header = () => {
                 <div className="container mx-auto px-4">
                   {/* Header section with logo and close button */}
                   <div className="flex items-center justify-between pt-4">
-                    <span className="text-xl md:text-2xl font-bold text-[#063642]">
+                    <span className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wide w-[200px] h-[40px] flex items-center text-[#063642]">
                       aneeverse
                     </span>
                     <button 
