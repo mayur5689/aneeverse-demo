@@ -72,17 +72,17 @@ const Hero = () => {
     <section className="relative pt-8 lg:pt-40 pb-4 lg:pb-20 px-4 md:px-10 lg:px-12 bg-[#063642] text-white">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center lg:items-center gap-6 lg:gap-8">
-          {/* Left content - centered on mobile */}
+          {/* Left content */}
           <div className="w-full lg:w-1/2 lg:pr-4 text-center lg:text-left mt-16 lg:mt-0">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold mb-4 md:mb-6 leading-[1.15]"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[56px] font-bold mb-4 md:mb-6 leading-[1.15]"
             >
-              <span className="uppercase tracking-normal font-inter font-semibold">DESIGN, OPTIMIZE, </span>
-              <span className="uppercase tracking-normal font-inter font-semibold">ADVERTISE</span>
-              <span className="block text-xl sm:text-2xl md:text-3xl font-normal mt-2 text-[#f97316] font-permanent-marker tracking-wide">
+              <span className="uppercase tracking-normal font-inter font-semibold block">DESIGN, OPTIMIZE,</span>
+              <span className="uppercase tracking-normal font-inter font-semibold block">ADVERTISE</span>
+              <span className="block text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-normal mt-4 text-[#f97316] font-permanent-marker tracking-wide">
                 WE GOT YOU COVERED.
               </span>
             </motion.h1>
@@ -91,13 +91,13 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8 max-w-2xl lg:max-w-none mx-auto lg:mx-0 leading-relaxed"
             >
               Get access to high-velocity creative team that works with your brand. 
               Ship campaigns — faster, more reliably, and at scale.
             </motion.p>
             
-            {/* Services list - hidden on mobile */}
+            {/* Services list */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -108,19 +108,19 @@ const Hero = () => {
                 <svg className="w-5 h-5 mr-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span>Dependable Services</span>
+                <span className="text-lg">Dependable Services</span>
               </div>
               <div className="flex items-center">
                 <svg className="w-5 h-5 mr-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span>Proven Results</span>
+                <span className="text-lg">Proven Results</span>
               </div>
               <div className="flex items-center">
                 <svg className="w-5 h-5 mr-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span>100% Better results</span>
+                <span className="text-lg">100% Better results</span>
               </div>
             </motion.div>
             
