@@ -71,61 +71,63 @@ const Comparison = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
           >
-            Hiring or traditional <br />
-            outsourcing? <span className="text-[#ff00ff] font-handwriting">neither</span>
+            Hiring or traditional outsourcing?
           </motion.h2>
+          <span className="text-[#ff00ff] font-permanent-marker text-2xl sm:text-3xl md:text-4xl tracking-wide">neither</span>
         </div>
         
-        {/* Criteria Headers */}
-        <div className="grid grid-cols-[2fr_repeat(5,_1fr)] gap-4 mb-12">
-          <div></div>
-          {criteria.map((criterion, index) => (
-            <div key={index} className="text-center">
-              <span className="text-base font-medium text-gray-300">{criterion}</span>
-            </div>
-          ))}
-        </div>
-        
-        {/* Options */}
-        <motion.div 
-          initial="hidden"
-          animate="visible"
-          className="space-y-8"
-        >
-          {options.map((option, index) => (
-            <motion.div 
-              key={index}
-              variants={itemVariants}
-              className={index === 0 ? "bg-[#82d9f7] rounded-[100px] py-12" : "py-6"}
-            >
-              <div className="grid grid-cols-[2fr_repeat(5,_1fr)] items-center gap-4">
-                <div className={`flex items-start ${index === 0 ? "pl-16 text-[#063642]" : "pl-6 text-white"}`}>
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-5 ${index === 0 ? "bg-[#82d9f7]" : "bg-[#0b4757]/60"}`}>
-                    <option.Icon className={`text-2xl ${index === 0 ? "text-[#063642]" : "text-white"}`} />
-                  </div>
-                  <div>
-                    <h3 className={`text-xl font-bold ${index === 0 ? "text-[#063642]" : "text-white"}`}>
-                      {option.title}
-                    </h3>
-                    <p className={`text-sm mt-2 max-w-xs leading-relaxed ${index === 0 ? "text-[#063642]/90" : "text-gray-400"}`}>
-                      {option.description}
-                    </p>
-                  </div>
+        {/* Scrollable container for mobile */}
+        <div className="overflow-x-auto pb-6">
+          <div className="min-w-[800px] md:min-w-full">
+            {/* Criteria Headers */}
+            <div className="grid grid-cols-[2fr_repeat(3,_1fr)] gap-4 mb-12">
+              <div></div>
+              {['Speed', 'Flexibility', 'Quality'].map((criterion, index) => (
+                <div key={index} className="text-center">
+                  <span className="text-base font-medium text-white">{criterion}</span>
                 </div>
-                
-                {option.checks.map((isChecked, checkIndex) => (
-                  <div key={checkIndex} className="flex justify-center items-center">
-                    <span className={`text-3xl ${isChecked ? "text-white" : "text-white opacity-90"}`}>
-                      {isChecked ? "✓" : "✕"}
-                    </span>
+              ))}
+            </div>
+            
+            {/* Options */}
+            <motion.div 
+              initial="hidden"
+              animate="visible"
+              className="space-y-4"
+            >
+              {options.map((option, index) => (
+                <motion.div 
+                  key={index}
+                  variants={itemVariants}
+                  className={`${index === 0 ? "bg-[#82d9f7] rounded-xl py-6" : "py-4"}`}
+                >
+                  <div className="grid grid-cols-[2fr_repeat(3,_1fr)] items-center gap-4">
+                    <div className={`flex items-center ${index === 0 ? "pl-6 text-[#063642]" : "pl-4 text-white"}`}>
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 ${index === 0 ? "bg-[#82d9f7]" : "bg-[#0b4757]/60"}`}>
+                        <option.Icon className={`text-xl ${index === 0 ? "text-[#063642]" : "text-white"}`} />
+                      </div>
+                      <div>
+                        <h3 className={`text-lg font-bold ${index === 0 ? "text-[#063642]" : "text-white"}`}>
+                          {option.title}
+                        </h3>
+                      </div>
+                    </div>
+                    
+                    {option.checks.slice(0, 3).map((isChecked, checkIndex) => (
+                      <div key={checkIndex} className="flex justify-center items-center">
+                        <span className={`text-2xl ${isChecked ? (index === 0 ? "text-[#063642]" : "text-[#82d9f7]") : "text-white/50"}`}>
+                          {isChecked ? "✓" : "✕"}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
