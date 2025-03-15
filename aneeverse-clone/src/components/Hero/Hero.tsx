@@ -73,7 +73,7 @@ const Hero = () => {
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center lg:items-center gap-6 lg:gap-8">
           {/* Left content - centered on mobile */}
-          <div className="w-full lg:w-1/2 lg:pr-4 text-center lg:text-left mt-8 lg:mt-0">
+          <div className="w-full lg:w-1/2 lg:pr-4 text-center lg:text-left mt-16 lg:mt-0">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
