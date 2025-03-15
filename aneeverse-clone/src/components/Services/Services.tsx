@@ -56,18 +56,18 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-[#f7fafc] text-[#063642]">
+    <section className="py-20 md:py-32 bg-[#ebfafe] text-[#063642]">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-4">
+        <div className="text-left mb-4">
           <div className="uppercase text-sm tracking-wide font-medium text-[#4571E0] mb-2">
             EASY & HASSLE-FREE
           </div>
         </div>
         
-        <div className="mb-16 max-w-5xl mx-auto">
+        <div className="mb-16 max-w-5xl">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#063642] leading-tight">
-            Every Type of Creative Work You'll <br className="hidden md:block"/>
-            Ever Need, <span className="text-[#4571E0] font-permanent-marker text-3xl md:text-4xl tracking-wide inline-block align-middle ml-1">AND MORE</span>
+            Every Type of Creative Work You'll Ever<br className="hidden md:block"/>
+            Need, <span className="text-[#4571E0] font-permanent-marker text-3xl md:text-4xl tracking-wide inline-block align-middle">AND MORE</span>
           </h2>
         </div>
 
@@ -184,14 +184,14 @@ const Services = () => {
         
         .services-track {
           display: flex;
-          width: calc(353.33px * ${serviceCards.length * 3});
+          width: calc(280px * ${serviceCards.length * 3});
           animation: scroll 40s linear infinite;
         }
         
         .service-card {
           flex: 0 0 auto;
-          width: 333.33px;
-          height: 500px;
+          width: 260px;
+          height: 400px;
           margin-right: 20px;
           border-radius: 8px;
           overflow: hidden;
@@ -208,7 +208,7 @@ const Services = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(calc(-353.33px * ${serviceCards.length}));
+            transform: translateX(calc(-280px * ${serviceCards.length}));
           }
         }
 
