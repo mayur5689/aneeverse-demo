@@ -64,14 +64,14 @@ const Comparison = () => {
   };
 
   return (
-    <section className="py-24 bg-[#063642] text-white">
+    <section className="py-12 bg-[#063642] text-white">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2"
           >
             Hiring or traditional outsourcing?
           </motion.h2>
@@ -79,14 +79,14 @@ const Comparison = () => {
         </div>
         
         {/* Scrollable container for mobile */}
-        <div className="overflow-x-auto pb-6">
-          <div className="min-w-[800px] md:min-w-full">
+        <div className="overflow-x-auto pb-4">
+          <div className="min-w-[1000px] md:min-w-full">
             {/* Criteria Headers */}
-            <div className="grid grid-cols-[2fr_repeat(3,_1fr)] gap-4 mb-12">
+            <div className="grid grid-cols-[2fr_repeat(5,_1fr)] gap-4 mb-6">
               <div></div>
-              {['Speed', 'Flexibility', 'Quality'].map((criterion, index) => (
+              {['Speed', 'Flexibility', 'Quality', 'Scalability', 'Cost-effectiveness'].map((criterion, index) => (
                 <div key={index} className="text-center">
-                  <span className="text-base font-medium text-white">{criterion}</span>
+                  <span className="text-sm font-medium text-white">{criterion}</span>
                 </div>
               ))}
             </div>
@@ -95,29 +95,32 @@ const Comparison = () => {
             <motion.div 
               initial="hidden"
               animate="visible"
-              className="space-y-4"
+              className="space-y-2"
             >
               {options.map((option, index) => (
                 <motion.div 
                   key={index}
                   variants={itemVariants}
-                  className={`${index === 0 ? "bg-[#82d9f7] rounded-xl py-6" : "py-4"}`}
+                  className={`${index === 0 ? "bg-[#82d9f7] rounded-[50px]" : ""}`}
                 >
-                  <div className="grid grid-cols-[2fr_repeat(3,_1fr)] items-center gap-4">
+                  <div className="grid grid-cols-[2fr_repeat(5,_1fr)] items-center gap-4 py-3">
                     <div className={`flex items-center ${index === 0 ? "pl-6 text-[#063642]" : "pl-4 text-white"}`}>
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 ${index === 0 ? "bg-[#82d9f7]" : "bg-[#0b4757]/60"}`}>
-                        <option.Icon className={`text-xl ${index === 0 ? "text-[#063642]" : "text-white"}`} />
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${index === 0 ? "bg-[#82d9f7]" : "bg-[#0b4757]/60"}`}>
+                        <option.Icon className={`text-lg ${index === 0 ? "text-[#063642]" : "text-white"}`} />
                       </div>
                       <div>
-                        <h3 className={`text-lg font-bold ${index === 0 ? "text-[#063642]" : "text-white"}`}>
+                        <h3 className={`text-base font-bold ${index === 0 ? "text-[#063642]" : "text-white"}`}>
                           {option.title}
                         </h3>
+                        <p className={`text-xs mt-0.5 max-w-xs leading-tight ${index === 0 ? "text-[#063642]/90" : "text-gray-400"}`}>
+                          {option.description}
+                        </p>
                       </div>
                     </div>
                     
-                    {option.checks.slice(0, 3).map((isChecked, checkIndex) => (
+                    {option.checks.map((isChecked, checkIndex) => (
                       <div key={checkIndex} className="flex justify-center items-center">
-                        <span className={`text-2xl ${isChecked ? (index === 0 ? "text-[#063642]" : "text-[#82d9f7]") : "text-white/50"}`}>
+                        <span className={`text-xl ${isChecked ? (index === 0 ? "text-[#063642]" : "text-[#82d9f7]") : "text-white/50"}`}>
                           {isChecked ? "✓" : "✕"}
                         </span>
                       </div>
