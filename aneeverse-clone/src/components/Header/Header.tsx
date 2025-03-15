@@ -124,71 +124,87 @@ const Header = () => {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.2 }}
-                className={`absolute top-full left-0 right-0 p-4 mt-2 rounded-lg shadow-lg ${
-                  scrolled 
-                    ? 'bg-[#ebfafe] text-[#063642]' 
-                    : 'bg-[#063642] text-white'
-                }`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="fixed top-0 left-0 w-full h-[100vh] bg-[#ebfafe] z-40"
               >
-                <div className="flex flex-col space-y-4">
-                  <Link 
-                    href="/services" 
-                    className="text-base font-medium hover:opacity-80"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Services
-                  </Link>
-                  <Link 
-                    href="/works" 
-                    className="text-base font-medium hover:opacity-80"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Our Works
-                  </Link>
-                  <Link 
-                    href="/why-us" 
-                    className="text-base font-medium hover:opacity-80"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Why Us
-                  </Link>
-                  <Link 
-                    href="/resources" 
-                    className="text-base font-medium hover:opacity-80"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Resources
-                  </Link>
-                  <Link 
-                    href="/pricing" 
-                    className="text-base font-medium hover:opacity-80"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Pricing
-                  </Link>
-                  <div className="pt-4 border-t border-current/10">
+                <div className="container mx-auto px-4">
+                  {/* Header section with logo and close button */}
+                  <div className="flex items-center justify-between pt-4">
+                    <span className="text-xl md:text-2xl font-bold text-[#063642]">
+                      aneeverse
+                    </span>
+                    <button 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="p-2 text-[#063642] hover:opacity-80"
+                      aria-label="Close menu"
+                    >
+                      <FiX className="w-6 h-6" />
+                    </button>
+                  </div>
+
+                  {/* Menu items */}
+                  <div className="flex flex-col space-y-6 mt-12">
                     <Link 
-                      href="/book" 
-                      className="block text-base font-medium hover:opacity-80 mb-4"
+                      href="/services" 
+                      className="text-lg font-medium text-[#063642] hover:opacity-80 flex items-center justify-between"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Services
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                    <Link 
+                      href="/works" 
+                      className="text-lg font-medium text-[#063642] hover:opacity-80"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Our Work
+                    </Link>
+                    <Link 
+                      href="/why-us" 
+                      className="text-lg font-medium text-[#063642] hover:opacity-80 flex items-center justify-between"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Why Us
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                    <Link 
+                      href="/resources" 
+                      className="text-lg font-medium text-[#063642] hover:opacity-80 flex items-center justify-between"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Resources
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                    <Link 
+                      href="/pricing" 
+                      className="text-lg font-medium text-[#063642] hover:opacity-80"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Pricing
+                    </Link>
+                  </div>
+                  <div className="mt-8 space-y-4">
+                    <button 
+                      className="w-full py-4 text-lg font-medium text-[#063642] bg-transparent rounded-full border-2 border-[#063642] hover:bg-[#063642] hover:text-white transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Book a Call
-                    </Link>
-                    <Link 
-                      href="/login" 
-                      className={`block text-center text-base font-medium px-6 py-2 rounded-full ${
-                        scrolled 
-                          ? 'bg-[#063642] text-white' 
-                          : 'bg-white text-[#063642]'
-                      }`}
+                    </button>
+                    <button 
+                      className="w-full py-4 text-lg font-medium text-white bg-[#063642] rounded-full hover:bg-[#063642]/90 transition-colors duration-300"
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      Login
-                    </Link>
+                      Sign In
+                    </button>
                   </div>
                 </div>
               </motion.div>
